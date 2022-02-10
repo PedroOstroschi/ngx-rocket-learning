@@ -2,7 +2,7 @@ import { Logger, LogLevel, LogOutput } from './logger.service';
 
 const logMethods = ['log', 'info', 'warn', 'error'];
 
-describe('Logger', () => {
+describe(Logger.name, () => {
   let savedConsole: any[];
   let savedLevel: LogLevel;
   let savedOutputs: LogOutput[];
