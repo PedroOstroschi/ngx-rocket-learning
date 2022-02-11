@@ -18,13 +18,16 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  public likes: number;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private translateService: TranslateService,
     private i18nService: I18nService
-  ) {}
+  ) {
+    this.likes = 0;
+  }
 
   ngOnInit() {
     // Setup logger
@@ -59,6 +62,10 @@ export class AppComponent implements OnInit, OnDestroy {
           this.titleService.setTitle(this.translateService.instant(title));
         }
       });
+  }
+
+  public like(): void {
+    this.likes++;
   }
 
   ngOnDestroy() {

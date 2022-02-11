@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UniqueIdService } from '@app/@shared/services/unique-id/unique-id.service';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -11,7 +12,7 @@ export class LikeWidgetComponent implements OnInit {
   @Output() public liked = new EventEmitter<void>();
   @Input() public likes = 0;
   @Input() public id = '';
-  public fonts = { faThumbsUp };
+  public thumbsUpIcon = faThumbsUp as IconProp;
 
   constructor(private uniqueIdService: UniqueIdService) {}
 
