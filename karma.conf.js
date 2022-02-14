@@ -1,6 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
-const path = require('path');
+path = require('path');
 
 module.exports = function (config) {
   config.set({
@@ -9,6 +9,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
@@ -22,7 +23,7 @@ module.exports = function (config) {
         // or set a specific seed with `seed: 4321`
       },
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
-      captureConsole: Boolean(process.env.KARMA_ENABLE_CONSOLE),
+      //captureConsole: Boolean(process.env.KARMA_ENABLE_CONSOLE),
     },
     junitReporter: {
       outputDir: path.join(__dirname, './reports/junit/'),
@@ -38,7 +39,6 @@ module.exports = function (config) {
     reporters: ['progress', 'junit', 'kjhtml'],
     port: 9876,
     colors: true,
-    // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
