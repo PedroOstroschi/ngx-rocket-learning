@@ -15,6 +15,8 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LikeWidgetComponent } from './@shared/components/like-widget/like-widget.component';
+import { LikeWidgetModule } from './@shared/components/like-widget/like-widget.module';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     ShellModule,
     HomeModule,
     AuthModule,
+    LikeWidgetModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
